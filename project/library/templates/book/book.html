@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+<h2>Kitoblar</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+    {% for book in books %}
+        <div style="border: 1px solid #ddd; padding: 10px; border-radius: 8px;">
+        <h4>{{ book.title }}</h4>
+        <p><b>Muallif:</b> {{ book.author.name }}</p>
+        <p><b>Janr:</b> {{ book.genre.name }}</p>
+        <p><b>Nashr:</b> {{ book.publishment.name }}</p>
+        </div>
+    {% empty %}
+        <p>Hozircha kitoblar yo‘q</p>
+    {% endfor %}
+    </div>
+</body>
+</html>
